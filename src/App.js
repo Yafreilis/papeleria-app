@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { initStorage, getSession, saveSession, clearSession } from './utils/storage';
 import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,10 +27,7 @@ function App() {
       {!user ? (
         <Login onLogin={handleLogin} />
       ) : (
-        <div>
-          <h1>Welcome, {user.name}!</h1>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
+        <Dashboard user={user} onLogout={handleLogout} />
       )}
     </div>
   );
