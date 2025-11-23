@@ -1,38 +1,22 @@
-.App {
-  text-align: center;
-}
+/* Reset básico */
+* { box-sizing: border-box; }
+body, html, #root { height: 100%; margin: 0; font-family: Inter, Arial, sans-serif; background-color: #f4f7fb; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* botones */
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
 }
+.btn-primary { background: #0d4ed6; color: white; }
+.btn-primary:hover { opacity: 0.95; transform: translateY(-1px); }
+.btn-secondary { background: #e2e8f0; color: #0f172a; }
+.btn-danger { background: #ef4444; color: white; }
+.btn-small { padding: 6px 10px; font-size: 13px; border-radius: 6px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* login */
+.login-wrap { max-width: 420px; margin: 60px auto; }
+.login-card { background: white; padding: 26px; border-radius: 10px; box-shadow: 0 8px 30px rgba(2,6,23,0.08); }
+.login-card input { width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #e6eefc; }
