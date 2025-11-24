@@ -1,4 +1,3 @@
-// src/components/Dashboard.js
 import React, { useEffect, useState } from 'react';
 import { getProducts, saveProducts, getSession } from '../utils/storage';
 import ProductForm from './ProductForm';
@@ -79,12 +78,18 @@ function Dashboard({ user, onLogout }) {
         <main className="content">
           <div className="cuadro">
             <div className="header-row">
-              <h2>Gestión de Productos</h2>
-              <div>
+              <h2>{view === 'list' ? 'Gestión de Productos' : 'Reporte de Inventario'}</h2>
+              <div className='no-print'>
                 <span style={{marginRight:12}}>Items: <b>{products.length}</b></span>
-                <button className="btn btn-primary" onClick={() => { setEditingProduct(null); setView('list'); }}>
-                  + Agregar Producto
-                </button>
+                {view === 'report' ? (
+                   <button className="btn btn-primary" onClick={() => window.print()}>
+                    Imprimir Reporte
+                  </button>
+                ) : (
+                  <button className="btn btn-primary" onClick={() => { setEditingProduct(null); setView('list'); }}>
+                    + Agregar Producto
+                  </button>
+                )}
               </div>
             </div>
 
